@@ -1,5 +1,15 @@
-- name: Ping a host
+- name: Test create directory and file
   hosts: all
+  become: true
   tasks:
-    - name: Ping Google
-      ansible.builtin.command: ping -c 4 google.com
+    - name: Create a test directory
+      ansible.builtin.file:
+        path: /tmp/test_ansible_dir
+        state: directory
+        mode: '0755'
+
+    - name: Create a test file
+      ansible.builtin.copy:
+        content: "This is a test file created by Ansible.\n"
+        dest: /tmp/test_ansible_dir/testfile.txt
+        mode: '0644'
