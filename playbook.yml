@@ -1,6 +1,6 @@
 ---
 - name: Install Docker on Debian/Ubuntu
-  hosts: all
+  hosts: vboxuser_server
   become: yes
 
   tasks:
