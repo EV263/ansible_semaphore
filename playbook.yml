@@ -1,9 +1,8 @@
 ---
-- name: Install Nginx on Ubuntu Server
-  hosts: vboxuser_server
-  become: true
+- name: Ping all hosts
+  hosts: all
+  gather_facts: false
+
   tasks:
-    - name: Install Nginx
-      apt:
-        name: nginx
-        state: present
+    - name: Ping remote machine
+      ping: 
