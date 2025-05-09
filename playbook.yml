@@ -1,9 +1,9 @@
-- name: Install Docker on Debian/Ubuntu
-  hosts: vboxuser_server  # <- this must match a group/host in your inventory
+---
+- name: Install Nginx on Ubuntu Server
+  hosts: your_ubuntu_host
   become: true
   tasks:
-    - name: Install Docker
+    - name: Install Nginx
       apt:
-        name: docker.io
+        name: nginx
         state: present
-        update_cache: true
