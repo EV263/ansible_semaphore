@@ -1,6 +1,6 @@
 ---
 - name: Install Nginx on Ubuntu Server
-  hosts: your_ubuntu_host
+  hosts: vboxuser_server
   become: true
   tasks:
     - name: Install Nginx
